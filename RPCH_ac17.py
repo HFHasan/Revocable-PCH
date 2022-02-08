@@ -139,7 +139,7 @@ class AC17CPABE(ABEnc):
                 prod *= (self.group.hash(input_for_hash, G1) ** (Br[l] / a_t))
             prod *= (g ** (sigma / a_t))       
             Kp.append(prod)
-        # compute sk3, for revocation and forward-security
+        # compute sk3, for revocation
         Kp.append(g_k[self.assump_size] / g_x * (g ** (-sigma)))
 
 
@@ -192,7 +192,7 @@ class AC17CPABE(ABEnc):
             C_0.append(h_A[i] ** s[i])
         C_0.append(h_A[self.assump_size] ** sum)
         ht = self.group.hash(time, G1)
-        C_0.append(ht**sum)  # addtional element for forward-security
+        C_0.append(ht**sum)  # addtional element
 
 
         # pre-compute hashes
