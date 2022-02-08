@@ -111,7 +111,7 @@ def Adapt(cpabe,pk, sk_tx, ctxt, key, ch, zk):
     h = pk['h']
     group = cpabe.get_group_obj()
     
-    # FBABE to get the trapdoor
+    # RABE to get the trapdoor
     td = cpabe.decrypt(pk, ctxt, key, sk_tx)
     
     # find collision
